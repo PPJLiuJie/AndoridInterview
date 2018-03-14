@@ -1,10 +1,10 @@
-// 1.**`public final native Class<?>`**
+** 1.public final native Class&lt;?&gt;**
 
 getClass\(\),效果与Object.class一样
 
 一般联合getName\(\)使用，返回当前对象的运行时类 如：com.me.demo.Person
 
-// 2.**`public native int hashCode()`**
+**2.public native int hashCode\(\)**
 
 返回当前对象的哈希值
 
@@ -20,7 +20,7 @@ getClass\(\),效果与Object.class一样
 
 [https://zhuanlan.zhihu.com/p/29511703](https://zhuanlan.zhihu.com/p/29511703)
 
-// 3.
+**3.public boolean equals\(...\)**
 
 ```java
 public boolean equals(Object obj) {
@@ -45,7 +45,7 @@ public boolean equals(Object obj) {
 }
 ```
 
-// 4.**`protected native Object clone()`**
+** 4.protected native Object clone\(\)**
 
 克隆
 
@@ -82,11 +82,11 @@ protected Object clone() throws CloneNotSupportedException {
 }
 ```
 
-// 5.**`public String toString()`**
+**5.public String toString\(\)**
 
 返回对象的字符串表现形式
 
-// 6.多线程相关
+**6.多线程相关**
 
 notify\(\)
 
@@ -98,7 +98,7 @@ wait\(long\)/wait\(long, int\)/wait\(\)
 
 [https://zhuanlan.zhihu.com/p/29511703](https://zhuanlan.zhihu.com/p/29511703)
 
-// 7.**`finalize()`**
+**7.finalize\(\)**
 
 JVM准备对此对象所占的内存空间进行回收之前，该方法将被调用
 
