@@ -15,8 +15,6 @@
 * char类型是单一的十六位Unicode字符
 * float和double的精度问题，参考：[https://www.zhihu.com/question/46432979/answer/221485161](https://www.zhihu.com/question/46432979/answer/221485161)
 
-
-
 **问题一：**
 
 ```
@@ -32,7 +30,7 @@ System.out.println(c == d);// true
 
 为什么 1000 == 1000 结果为false，而 100 == 100 结果为true?
 
-Integer.java 类，你会发现有一个内部私有类，IntegerCache.java，它缓存了从-128到127之间的所有的整数对象。所以事情就成了，所有的小整数在内部缓存，然后当我们声明类似 Integer c = 100; 的时候，它实际上在内部做的是 Integer i = Integer.valueOf\(100\); 现在，如果我们去看valueOf\(\)方法，我们可以看到
+Integer.java 类，你会发现有一个内部私有类，IntegerCache.java，它缓存了从-128到127之间的所有的整数对象。所以事情就成了，所有的小整数在内部缓存，然后当我们声明类似 Integer c = 100; 的时候，它实际上在内部做的是 Integer i = Integer.valueOf\(100\);现在，如果我们去看valueOf\(\)方法，我们可以看到
 
 ```java
 public static Integer valueOf(int i) {
@@ -43,9 +41,7 @@ public static Integer valueOf(int i) {
 }
 ```
 
-如果值的范围在-128到127之间，它就从高速缓存返回实例。所以 Integer c = 100, d = 100; 指向了同一个对象。这就是为什么我们写
-
-System.out.println\(c == d\);我们可以得到true。现在你可能会问，为什么这里需要缓存？合乎逻辑的理由是，在此范围内的“小”整数使用率比大整数要高，因此，使用相同的底层对象是有价值的，可以减少潜在的内存占用。摘自：[https://zhuanlan.zhihu.com/p/32774770?utm\_source=qq&utm\_medium=social](https://zhuanlan.zhihu.com/p/32774770?utm_source=qq&utm_medium=social)
+如果值的范围在-128到127之间，它就从高速缓存返回实例。所以 Integer c = 100, d = 100;指向了同一个对象。这就是为什么我们写System.out.println\(c == d\);我们可以得到true。现在你可能会问，为什么这里需要缓存？合乎逻辑的理由是，在此范围内的“小”整数使用率比大整数要高，因此，使用相同的底层对象是有价值的，可以减少潜在的内存占用。摘自：[https://zhuanlan.zhihu.com/p/32774770?utm\_source=qq&utm\_medium=social](https://zhuanlan.zhihu.com/p/32774770?utm_source=qq&utm_medium=social)
 
 
 
@@ -63,8 +59,6 @@ byte在计算机中占1个字节(8位)，而且byte是有符号的，用二进�
              -128取绝对值为128，128用二进制表示为 1000 0000，按位取反后为 0111 1111，再加上1为 1000 0000
              -129取绝对值为129，129用二进制表示未 1000 00001，长度超过8位了，所以byte类型最小值为-128
 ```
-
-
 
 **问题三：**
 
