@@ -1,12 +1,10 @@
-// 1.`public final native Class<?>`
+// 1.**`public final native Class<?>`**
 
 getClass\(\),效果与Object.class一样
 
 一般联合getName\(\)使用，返回当前对象的运行时类 如：com.me.demo.Person
 
-
-
-// 2.`public native int hashCode()`
+// 2.**`public native int hashCode()`**
 
 返回当前对象的哈希值
 
@@ -21,8 +19,6 @@ getClass\(\),效果与Object.class一样
 至于为什么要重写hashCode\(\)方法，参见：
 
 [https://zhuanlan.zhihu.com/p/29511703](https://zhuanlan.zhihu.com/p/29511703)
-
-
 
 // 3.
 
@@ -49,9 +45,7 @@ public boolean equals(Object obj) {
 }
 ```
 
-
-
-// 4.`protected native Object clone()`
+// 4.**`protected native Object clone()`**
 
 克隆
 
@@ -69,8 +63,6 @@ Person p3 = (Person)p1.clone();
 p3.setName("lisi");
 // 到此为止,p1和p2的name属性值为"zhangsan",p3的name属性值为"lisi"
 ```
-
-
 
 上述代码中，p1和p2指向同一块内存的某个对象，p3是p1克隆出来的，也就是说p3和p1指向不同的对象，但是p1和p3的属性值和方法是一样的，此时修改p3的属性值对p1没有影响
 
@@ -90,13 +82,9 @@ protected Object clone() throws CloneNotSupportedException {
 }
 ```
 
-
-
-// 5.`public String toString()`
+// 5.**`public String toString()`**
 
 返回对象的字符串表现形式
-
-
 
 // 6.多线程相关
 
@@ -110,9 +98,7 @@ wait\(long\)/wait\(long, int\)/wait\(\)
 
 [https://zhuanlan.zhihu.com/p/29511703](https://zhuanlan.zhihu.com/p/29511703)
 
-
-
-// 7.`finalize()`
+// 7.**`finalize()`**
 
 JVM准备对此对象所占的内存空间进行回收之前，该方法将被调用
 
