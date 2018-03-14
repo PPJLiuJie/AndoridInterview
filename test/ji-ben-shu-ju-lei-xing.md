@@ -11,5 +11,11 @@
 | char | 2 | 16 | \u0000 ~ \uffff | Character |
 | boolean |  |  |  |  |
 
+* 浮点数默认类型为double
+* char类型是单一的十六位Unicode字符
+* float和double的精度问题，参考：[https://www.zhihu.com/question/46432979/answer/221485161](https://www.zhihu.com/question/46432979/answer/221485161)
+
+
+
 
 
