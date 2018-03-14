@@ -1,4 +1,4 @@
-9种基本数据类型，以及他们的封装类
+8种基本数据类型，以及他们的封装类
 
 | 数据类型 | 字节 | 位 | 取值范围 | 封装类 |
 | :--- | :--- | :--- | :--- | :--- |
@@ -42,8 +42,6 @@ public static Integer valueOf(int i) {
 ```
 
 如果值的范围在-128到127之间，它就从高速缓存返回实例。所以 Integer c = 100, d = 100;指向了同一个对象。这就是为什么我们写System.out.println\(c == d\);我们可以得到true。现在你可能会问，为什么这里需要缓存？合乎逻辑的理由是，在此范围内的“小”整数使用率比大整数要高，因此，使用相同的底层对象是有价值的，可以减少潜在的内存占用。摘自：[https://zhuanlan.zhihu.com/p/32774770?utm\_source=qq&utm\_medium=social](https://zhuanlan.zhihu.com/p/32774770?utm_source=qq&utm_medium=social)
-
-
 
 **问题二：**
 
