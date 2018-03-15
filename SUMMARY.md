@@ -13,4 +13,6 @@
   * [wati\(\)和sleep\(\)的区别](test/watihe-sleepde-qu-bie.md)
   * [foreach和for的区别、效率对比](test/foreachhe-for-de-qu-bie.md)
   * [JDK1.5 ~ 1.8新特性](test/jdk151718xin-te-xing.md)
+* [Java虚拟机](javaxu-ni-ji.md)
+  * [Java内存区域与内存溢出异常](javaxu-ni-ji/javanei-cun-qu-yu-yu-nei-cun-yi-chu-yi-chang.md)
 
