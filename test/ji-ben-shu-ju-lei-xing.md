@@ -17,7 +17,7 @@
 
 **问题一：**
 
-```
+```java
 Integer a = 1000;
 Integer b = 1000;
 
