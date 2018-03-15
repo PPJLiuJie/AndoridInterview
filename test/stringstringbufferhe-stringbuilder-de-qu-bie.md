@@ -1,0 +1,2 @@
+参考这里：[https://github.com/Mr-YangCheng/ForAndroidInterview/blob/master/java/%5BJava%5D%20%E4%BB%8E%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90String%E3%80%81StringBuffer%E4%B8%8EStringBuilder%E5%8C%BA%E5%88%AB%E5%92%8C%E8%81%94%E7%B3%BB.md](https://github.com/Mr-YangCheng/ForAndroidInterview/blob/master/java/%5BJava%5D%20%E4%BB%8E%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90String%E3%80%81StringBuffer%E4%B8%8EStringBuilder%E5%8C%BA%E5%88%AB%E5%92%8C%E8%81%94%E7%B3%BB.md)
+
