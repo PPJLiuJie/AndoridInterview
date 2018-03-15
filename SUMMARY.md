@@ -11,4 +11,5 @@
   * [static class\(静态内部类\)和non static class\(非静态内部类\)的区别](test/static-classjing-tai-nei-bu-7c7b29-he-non-static-class-fei-jing-tai-nei-bu-7c7b29-de-qu-bie.md)
   * [多态的实现原理](test/duo-tai-de-shi-xian-yuan-li.md)
   * [wati\(\)和sleep\(\)的区别](test/watihe-sleepde-qu-bie.md)
+  * [foreach和for的区别、效率对比](test/foreachhe-for-de-qu-bie.md)
 
