@@ -14,4 +14,7 @@
   * [foreach和for的区别、效率对比](test/foreachhe-for-de-qu-bie.md)
   * [JDK1.5 ~ 1.8新特性](test/jdk151718xin-te-xing.md)
 * [Java虚拟机](javaxu-ni-ji.md)
+* [Android](android.md)
+  * onSaveInstanceState的使用
+  * activity的启动模式
 
