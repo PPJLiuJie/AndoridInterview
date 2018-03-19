@@ -13,6 +13,7 @@
   * [wati\(\)和sleep\(\)的区别](test/watihe-sleepde-qu-bie.md)
   * [foreach和for的区别、效率对比](test/foreachhe-for-de-qu-bie.md)
   * [JDK1.5 ~ 1.8新特性](test/jdk151718xin-te-xing.md)
+  * [Java序列化和反序列化\(Serializable\)](test/javaxu-lie-hua-he-fan-xu-lie-531628-serializable.md)
 * [Java虚拟机](javaxu-ni-ji.md)
 * [Android](android.md)
   * onSaveInstanceState的使用
