@@ -15,6 +15,7 @@
   * [JDK1.5 ~ 1.8新特性](test/jdk151718xin-te-xing.md)
   * [Java序列化和反序列化\(Serializable\)](test/javaxu-lie-hua-he-fan-xu-lie-531628-serializable.md)
 * [Java虚拟机](javaxu-ni-ji.md)
+  * [内存管理机制](javaxu-ni-ji/nei-cun-guan-li-ji-zhi.md)
 * [Android](android.md)
   * onSaveInstanceState的使用
   * activity的启动模式
