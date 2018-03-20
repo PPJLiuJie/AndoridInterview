@@ -82,14 +82,14 @@ Java堆用于存储对象实例，只要不断地创建对象，并且保证GC R
  * @author zzm
  */
 public class HeapOOM {
-	static class OOMObject {}
+    static class OOMObject {}
 
-	public static void main(String[] args) {
-		List<OOMObject> list = new ArrayList<OOMObject>();
-		while (true) {
-			list.add(new OOMObject());
-		}
-	}
+    public static void main(String[] args) {
+        List<OOMObject> list = new ArrayList<OOMObject>();
+        while (true) {
+            list.add(new OOMObject());
+        }
+    }
 }
 ```
 
@@ -118,26 +118,26 @@ Heap dump file created[22045981 bytes in 0.663 secs]
  * @author zzm
  */
 public class JavaVMStackSOF {
-	private int stackLength = 1;
+    private int stackLength = 1;
 
-	public void stackLeak() {
-		stackLength++;
-		stackLeak();
-	}
+    public void stackLeak() {
+        stackLength++;
+        stackLeak();
+    }
 
-	/**
-	 * 增大此方法帧中本地变量表的长度。 结果：抛出StackOverflowError异常时输出的堆栈深度相应缩小。
-	 */
-	
-	public static void main(String[] args) throws Throwable {
-		JavaVMStackSOF oom = new JavaVMStackSOF();
-		try {
-			oom.stackLeak();
-		} catch (Throwable e) {
-			System.out.println("stack length：" + oom.stackLength);
-			throw e;
-		}
-	}
+    /**
+     * 增大此方法帧中本地变量表的长度。 结果：抛出StackOverflowError异常时输出的堆栈深度相应缩小。
+     */
+
+    public static void main(String[] args) throws Throwable {
+        JavaVMStackSOF oom = new JavaVMStackSOF();
+        try {
+            oom.stackLeak();
+        } catch (Throwable e) {
+            System.out.println("stack length：" + oom.stackLength);
+            throw e;
+        }
+    }
 }
 ```
 
@@ -159,7 +159,7 @@ at org.fenixsoft.oom.VMStackSOF.leak（VMStackSOF.java：21）
 
 方法区用于存放Class的相关信息，如类名、访问修饰符、常量池、字段描述、方法描述等。对于这些区域的测试，基本的思路是运行时产生大量的类去填满方法区，直到溢出。
 
-方法区溢出也是一种常见的内存溢出异常，一个类要被垃圾收集器回收掉，判定条件是比较苛刻的。 在经常动态生成大量Class的应用中，需要特别注意类的回收状况。 
+方法区溢出也是一种常见的内存溢出异常，一个类要被垃圾收集器回收掉，判定条件是比较苛刻的。 在经常动态生成大量Class的应用中，需要特别注意类的回收状况。
 
 #### 3.4 本机直接内存\(DirectMemory\)溢出
 
