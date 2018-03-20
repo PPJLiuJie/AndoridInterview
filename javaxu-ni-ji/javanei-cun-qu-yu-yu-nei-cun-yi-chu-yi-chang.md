@@ -38,7 +38,7 @@ Java堆是垃圾收集器管理的主要区域，因此很多时候也被称做�
 
 从内存回收的角度来看，由于现在收集器基本都采用分代收集算法，所以Java堆中还可以细分为：新生代和老年代；再细致一点的有Eden空间、 From Survivor空间、 To Survivor空间等。
 
-从内存分配的角度来看，线程共享的Java堆中可能划分出多个线程私有的分配缓冲区（Thread Local Allocation Buffer,TLAB）。 不过无论如何划分，都与存放内容无关，无论哪个区域，存储的都仍然是对象实例，进一步划分的目的是为了更好地回收内存，或者更快地分配内存。 
+从内存分配的角度来看，线程共享的Java堆中可能划分出多个线程私有的分配缓冲区（Thread Local Allocation Buffer,TLAB）。 不过无论如何划分，都与存放内容无关，无论哪个区域，存储的都仍然是对象实例，进一步划分的目的是为了更好地回收内存，或者更快地分配内存。
 
 根据Java虚拟机规范的规定，Java堆可以处于物理上不连续的内存空间中，只要逻辑上是连续的即可，就像我们的磁盘空间一样。 在实现时，既可以实现成固定大小的，也可以是可扩展的，不过当前主流的虚拟机都是按照可扩展来实现的（通过-Xmx和-Xms控制）。 如果在堆中没有内存完成实例分配，并且堆也无法再扩展时，将会抛出OutOfMemoryError异常。
 
@@ -46,9 +46,9 @@ Java堆是垃圾收集器管理的主要区域，因此很多时候也被称做�
 
 方法区（Method Area）与Java堆一样，是各个线程共享的内存区域，它用于存储已被虚拟机加载的类信息、 常量、 静态变量、 即时编译器编译后的代码等数据。 虽然Java虚拟机规范把方法区描述为堆的一个逻辑部分，但是它却有一个别名叫做Non-Heap（非堆），目的应该是与Java堆区分开来。
 
-Java虚拟机规范对方法区的限制非常宽松，除了和Java堆一样不需要连续的内存和可以选择固定大小或者可扩展外，还可以选择不实现垃圾收集。 相对而言，垃圾收集行为在这个区域是比较少出现的，但并非数据进入了方法区就如永久代的名字一样“永久”存在了。 这区域的内存回收目标主要是针对常量池的回收和对类型的卸载，一般来说，这个区域的回收“成绩”比较难以令人满意，尤其是类型的卸载，条件相当苛刻，但是这部分区域的回收确实是必要的。 
+Java虚拟机规范对方法区的限制非常宽松，除了和Java堆一样不需要连续的内存和可以选择固定大小或者可扩展外，还可以选择不实现垃圾收集。 相对而言，垃圾收集行为在这个区域是比较少出现的，但并非数据进入了方法区就如永久代的名字一样“永久”存在了。 这区域的内存回收目标主要是针对常量池的回收和对类型的卸载，一般来说，这个区域的回收“成绩”比较难以令人满意，尤其是类型的卸载，条件相当苛刻，但是这部分区域的回收确实是必要的。
 
-对于习惯在HotSpot虚拟机上开发、 部署程序的开发者来说，很多人都更愿意把方法区称为“永久代”（Permanent Generation），本质上两者并不等价，仅仅是因为HotSpot虚拟机的设计团队选择把GC分代收集扩展至方法区，或者说使用永久代来实现方法区而已，这样HotSpot的垃圾收集器可以像管理Java堆一样管理这部分内存，能够省去专门为方法区编写内存管理代码的工作。 
+对于习惯在HotSpot虚拟机上开发、 部署程序的开发者来说，很多人都更愿意把方法区称为“永久代”（Permanent Generation），本质上两者并不等价，仅仅是因为HotSpot虚拟机的设计团队选择把GC分代收集扩展至方法区，或者说使用永久代来实现方法区而已，这样HotSpot的垃圾收集器可以像管理Java堆一样管理这部分内存，能够省去专门为方法区编写内存管理代码的工作。
 
 根据Java虚拟机规范的规定，当方法区无法满足内存分配需求时，将抛出OutOfMemoryError异常。
 
@@ -67,6 +67,105 @@ Java虚拟机规范对方法区的限制非常宽松，除了和Java堆一样不
 直接内存（Direct Memory）并不是虚拟机运行时数据区的一部分，也不是Java虚拟机规范中定义的内存区域。 但是这部分内存也被频繁地使用，而且也可能导致OutOfMemoryError异常出现，所以我们放到这里一起讲解。
 
 显然，本机直接内存的分配不会受到Java堆大小的限制，但是，既然是内存，肯定还是会受到本机总内存（包括RAM以及SWAP区或者分页文件）大小以及处理器寻址空间的限制。 服务器管理员在配置虚拟机参数时，会根据实际内存设置-Xmx等参数信息，但经常忽略直接内存，使得各个内存区域总和大于物理内存限制（包括物理的和操作系统级的限制），从而导致动态扩展时出现OutOfMemoryError异常。
+
+# 3 OutOfMemoryError异常和StackOverFlowError异常
+
+### 3.1 Java堆溢出
+
+Java堆用于存储对象实例，只要不断地创建对象，并且保证GC Roots到对象之间有可达路径来避免垃圾回收机制清除这些对象，那么在对象数量到达最大堆的容量限制后就会产生内存溢出异常。
+
+```java
+/**
+ * 设置Eclipse，限制Java堆的大小为20MB，不可扩展
+ * 通过参数-XX：+HeapDumpOnOutOfMemoryError可以让虚拟机在出现内存溢出异常时Dump出当前的内存堆转储快照以便事后进行分析
+ * VM Args：-Xms20m-Xmx20m-XX：+HeapDumpOnOutOfMemoryError
+ * @author zzm
+ */
+public class HeapOOM {
+	static class OOMObject {}
+
+	public static void main(String[] args) {
+		List<OOMObject> list = new ArrayList<OOMObject>();
+		while (true) {
+			list.add(new OOMObject());
+		}
+	}
+}
+```
+
+```
+运行结果：
+java.lang.OutOfMemoryError：Java heap space
+Dumping heap to java_pid3404.hprof……
+Heap dump file created[22045981 bytes in 0.663 secs]
+```
+
+#### 3.2 虚拟机栈和本地方法栈溢出
+
+关于虚拟机栈和本地方法栈，在Java虚拟机规范中描述了两种异常：
+
+1. 如果线程请求的栈深度大于虚拟机所允许的最大深度，将抛出StackOverflowError异常。
+2. 如果虚拟机在扩展栈时无法申请到足够的内存空间，则抛出OutOfMemoryError异常。
+
+这里把异常分成两种情况，看似更加严谨，但却存在着一些互相重叠的地方：当栈空间无法继续分配时，到底是内存太小，还是已使用的栈空间太大，其本质上只是对同一件事情的两种描述而已。
+
+```java
+/**
+ * 设置Eclipse，限制栈的大小为128k
+ * VM Args：-Xss128k
+ * 
+ * 使用-Xss参数减少栈内存容量。 结果：抛出StackOverflowError异常，异常出现时输出的堆栈深度相应缩小。
+ * @author zzm
+ */
+public class JavaVMStackSOF {
+	private int stackLength = 1;
+
+	public void stackLeak() {
+		stackLength++;
+		stackLeak();
+	}
+
+	/**
+	 * 增大此方法帧中本地变量表的长度。 结果：抛出StackOverflowError异常时输出的堆栈深度相应缩小。
+	 */
+	
+	public static void main(String[] args) throws Throwable {
+		JavaVMStackSOF oom = new JavaVMStackSOF();
+		try {
+			oom.stackLeak();
+		} catch (Throwable e) {
+			System.out.println("stack length：" + oom.stackLength);
+			throw e;
+		}
+	}
+}
+```
+
+```
+运行结果：
+stack length：2402
+Exception in thread"main"java.lang.StackOverflowError
+at org.fenixsoft.oom.VMStackSOF.leak（VMStackSOF.java：20）
+at org.fenixsoft.oom.VMStackSOF.leak（VMStackSOF.java：21）
+at org.fenixsoft.oom.VMStackSOF.leak（VMStackSOF.java：21）
+……后续异常堆栈信息省略
+```
+
+实验结果：在单个线程下，无论是由于栈帧太大还是虚拟机栈容量太小，当内存无法分配的时候，虚拟机抛出的都是StackOverflowError异常。
+
+#### 3.3 方法区和运行时常量溢出
+
+运行时常量池是方法区的一部分。
+
+方法区用于存放Class的相关信息，如类名、访问修饰符、常量池、字段描述、方法描述等。对于这些区域的测试，基本的思路是运行时产生大量的类去填满方法区，直到溢出。
+
+方法区溢出也是一种常见的内存溢出异常，一个类要被垃圾收集器回收掉，判定条件是比较苛刻的。 在经常动态生成大量Class的应用中，需要特别注意类的回收状况。 
+
+#### 3.4 本机直接内存\(DirectMemory\)溢出
+
+由DirectMemory导致的内存溢出，一个明显的特征是在Heap Dump文件中不会看见明显的异常，如果读者发现OOM之后Dump文件很小，而程序中又直接或间接使用了NIO，那就可以考虑检查一下是不是这方面的原因。
+
+### _**以上内容摘自《深入理解Java虚拟机》——周志明 著**_
 
 
 
