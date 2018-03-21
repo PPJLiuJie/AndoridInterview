@@ -22,6 +22,7 @@
   * [Java的四种引用——强软弱虚](javaxu-ni-ji/javade-si-zhong-yin-yong-2014-2014-qiang-ruan-ruo-xu.md)
   * [方法区的回收](javaxu-ni-ji/fang-fa-qu-de-hui-shou.md)
   * [垃圾收集算法](javaxu-ni-ji/la-ji-shou-ji-suan-fa.md)
+  * [HotSpot的算法实现](javaxu-ni-ji/hotspotde-suan-fa-shi-xian.md)
   * [垃圾收集器](javaxu-ni-ji/la-ji-shou-ji-qi.md)
 * [Android](android.md)
   * onSaveInstanceState的使用
