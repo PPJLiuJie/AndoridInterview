@@ -20,6 +20,7 @@
   * [垃圾收集器与内存分配概述](javaxu-ni-ji/la-ji-shou-ji-qi-yu-nei-cun-fen-pei-gai-shu.md)
   * [如何判断对象已死](javaxu-ni-ji/la-ji-shou-ji-qi-yu-nei-cun-fen-pei-ce-lve.md)
   * [Java的四种引用——强软弱虚](javaxu-ni-ji/javade-si-zhong-yin-yong-2014-2014-qiang-ruan-ruo-xu.md)
+  * [方法区的回收](javaxu-ni-ji/fang-fa-qu-de-hui-shou.md)
 * [Android](android.md)
   * onSaveInstanceState的使用
   * activity的启动模式
