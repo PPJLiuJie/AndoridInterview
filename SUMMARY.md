@@ -24,6 +24,7 @@
   * [垃圾收集算法](javaxu-ni-ji/la-ji-shou-ji-suan-fa.md)
   * [HotSpot的算法实现](javaxu-ni-ji/hotspotde-suan-fa-shi-xian.md)
   * [垃圾收集器](javaxu-ni-ji/la-ji-shou-ji-qi.md)
+  * [理解GC日志](javaxu-ni-ji/li-jie-gc-ri-zhi.md)
   * [内存分配与回收策略](javaxu-ni-ji/nei-cun-fen-pei-yu-hui-shou-ce-lve.md)
 * [Android](android.md)
   * onSaveInstanceState的使用
