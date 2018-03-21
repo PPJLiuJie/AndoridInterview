@@ -17,7 +17,7 @@
 * [Java虚拟机](javaxu-ni-ji.md)
   * [Java内存区域与内存溢出异常](javaxu-ni-ji/javanei-cun-qu-yu-yu-nei-cun-yi-chu-yi-chang.md)
   * [对象的创建、内存布局、访问定位](javaxu-ni-ji/dui-xiang-de-chuang-jian-3001-nei-cun-bu-ju-3001-fang-wen-ding-wei.md)
-  * [垃圾收集器与内存分配策略](javaxu-ni-ji/la-ji-shou-ji-qi-yu-nei-cun-fen-pei-ce-lve.md)
+  * [如何判断对象已死](javaxu-ni-ji/la-ji-shou-ji-qi-yu-nei-cun-fen-pei-ce-lve.md)
   * [Java的四种引用——强软弱虚](javaxu-ni-ji/javade-si-zhong-yin-yong-2014-2014-qiang-ruan-ruo-xu.md)
 * [Android](android.md)
   * onSaveInstanceState的使用
