@@ -27,6 +27,7 @@
   * [理解GC日志](javaxu-ni-ji/li-jie-gc-ri-zhi.md)
   * [内存分配与回收策略](javaxu-ni-ji/nei-cun-fen-pei-yu-hui-shou-ce-lve.md)
   * [虚拟机类加载机制](javaxu-ni-ji/xu-ni-ji-lei-jia-zai-ji-zhi.md)
+  * [类加载器](javaxu-ni-ji/lei-jia-zai-qi.md)
 * [Android](android.md)
   * onSaveInstanceState的使用
   * activity的启动模式
