@@ -31,4 +31,5 @@
 * [Android](android.md)
   * onSaveInstanceState的使用
   * activity的启动模式
+  * 异步消息机制\(Handler、Looper、MessageQueue\)
 
