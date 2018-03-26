@@ -29,7 +29,7 @@
   * [虚拟机类加载机制](javaxu-ni-ji/xu-ni-ji-lei-jia-zai-ji-zhi.md)
   * [类加载器](javaxu-ni-ji/lei-jia-zai-qi.md)
 * [Android](android.md)
-  * onSaveInstanceState的使用
-  * activity的启动模式
-  * 异步消息机制\(Handler、Looper、MessageQueue\)
+  * [onSaveInstanceState的使用](android/onsaveinstancestatede-shi-yong.md)
+  * [activity的启动模式](android/activityde-qi-dong-mo-shi.md)
+  * [异步消息机制\(Handler、Looper、MessageQueue\)](android/yi-bu-xiao-xi-ji-523628-handler-looper-messagequeue.md)
 
