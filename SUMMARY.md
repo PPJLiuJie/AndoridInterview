@@ -32,4 +32,5 @@
   * [onSaveInstanceState的使用](android/onsaveinstancestatede-shi-yong.md)
   * [activity的启动模式](android/activityde-qi-dong-mo-shi.md)
   * [异步消息机制\(Handler、Looper、MessageQueue\)](android/yi-bu-xiao-xi-ji-523628-handler-looper-messagequeue.md)
+  * [Fragment生命周期方法、设备旋转的影响](android/fragmentsheng-ming-zhou-qi-fang-fa-3001-she-bei-xuan-zhuan-de-ying-xiang.md)
 
