@@ -115,3 +115,9 @@ TCP协议可以为各式各样的程序传递数据，比如Email、www、FTP等
 
 应用层的协议有：SMTP（电子邮件）、HTTP（万维网）、TELNET（远程终端连接）、FTP（文件传输）、DNS（域名转换）等等。
 
+## 以上内容摘自：
+
+阮一峰的博客：《互联网协议入门》[http://www.ruanyifeng.com/blog/2012/05/internet\_protocol\_suite\_part\_i.html](http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html)
+
+《TCP/IP协议族》第四版
+
