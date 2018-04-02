@@ -28,5 +28,7 @@ TCP和UDP都是传输层协议，但是两者具有不同的特性和应用场�
 
 #### 双工性的概念摘自百度知道：[https://zhidao.baidu.com/question/21855854.html](https://zhidao.baidu.com/question/21855854.html)
 
+#### 流量控制和拥塞控制后面的文章会继续介绍。。。
+
 
 
