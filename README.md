@@ -1,8 +1,4 @@
 # AndoridInterview
 
-Android面试知识点
-
-
-
-
+Android知识点
 
