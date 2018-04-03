@@ -18,6 +18,16 @@
 
 * Allow：服务器支持哪些请求方式（如POST、GET）
 * Content-Encoding：文档的编码
+* Content-Length：内容长度。只有使用持久HTTP连接时才需要这个数据
+* Content-Type：文档的媒体类型
+* Date：创建报文的时间日期
+* Expires：文档过期的时间日期。过期之后将不再缓存
+* Last-Modified：文档的最后改动时间
+* Refresh：浏览器应该在多少秒之后刷新文档
+* Server：服务器的安装信息。如：ngnix/1.6.2
+* Set-Cookie：设置和页面关联的Cookie
+* ETag：资源的匹配信息。是一个可以与Web资源关联的记号（MD5值）
+* Cache-Control：用于控制缓存的行为。
 
 
 
