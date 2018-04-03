@@ -43,7 +43,7 @@
   * TCP的三次握手与四次挥手，各个状态名称与含义，TIMEWAIT作用
   * TCP滑动窗口与回退N针协议
   * [HTTP报文结构](tcpiphttp/httpbao-wen-jie-gou.md)
-  * HTTP状态码含义
+  * [HTTP状态码含义](tcpiphttp/httpzhuang-tai-ma-han-yi.md)
   * HTTP request的几种类型
   * HTTP1.1和HTTP1.0的区别
   * HTTP如何处理长连接
