@@ -59,5 +59,15 @@ D类IP地址用来进行**多播（多点广播）,即一对多通信**。
 3. 255.255.255.255是当前子网的广播地址
 4. 所有网络号为127的地址都称之为回路地址（回环地址），回路地址！= 127.0.0.1，它们是包含关系，即回路地址包含127.0.0.1。实际上只要是127.0.0.1到127.255.255.255都是回环地址，都是可以PING检查的。ping 127.0.0.1，如果能ping通，说明TCP/IP协议栈没问题，如果有问题，就需要检查TCP/IP协议栈，或者重新安装它。
 
+#### 以上内容参考自：
+
+《TCP/IP协议族》第四版
+
+知乎：[https://www.zhihu.com/question/31766172](https://www.zhihu.com/question/31766172)
+
+[http://www.edu.cn/20031208/3095629.shtml](http://www.edu.cn/20031208/3095629.shtml)
+
+百度知道：[https://zhidao.baidu.com/question/68289955.html](https://zhidao.baidu.com/question/68289955.html)
+
 
 
