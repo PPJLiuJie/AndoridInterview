@@ -42,5 +42,9 @@ keep-alive不会使客户端和服务器永久保持连接，它会有一个保�
 | 短连接 | 管理较为简单，存在的连接都是有用的连接，不需要额外的控制手段。 | 如果客户端请求频繁，将在TCP的建立h额关闭操作上浪费较多的时间和宽带。 |
 | 长连接 | 省去较多的TCP建立和关闭操作，减少浪费，节约时间。 | 随着客户端的连接越来越多，服务器会保持过多的连接。解决方法就是：1.关闭一些长时间没有发生请求的连接；2.限制每个客户端的最大连接数，避免恶意的客户端拖垮服务器。 |
 
+### 以上内容参考自：
 
+腾讯云：[https://cloud.tencent.com/document/product/214/4149](https://cloud.tencent.com/document/product/214/4149)
+
+知乎：[https://www.zhihu.com/question/22677800](https://www.zhihu.com/question/22677800)
 
