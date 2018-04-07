@@ -35,6 +35,16 @@ ping可以说是ICMP协议的最著名的应用，是TCP/IP协议的一部分。
 2. 路由器端口1得到数据帧之后，将数据帧发送到端口2，端口2需要将数据帧发给主机C，那么端口2需要知道主机C的MAC地址，跟上面一样，使用ARP协议，从ARP缓存中查找，找不到就广播。
 3. 后续步骤跟同网段内ping的步骤类似。。。
 
+### ping的返回结果分析：
+
+![](/assets/008.png)
+
+以ping百度为例。
+
+www.baidu.com是www.a.shifen.com的DNS别名，IP地址是14.215.177.38
+
+TTL：time to live 。每一个被发送出的IP数据包都有一个TTL域，该域被设置为一个较高的数值（在本例中ping信息包的TTL值为56\)。当信息包在网络中被传输时，TTL的域值通过一个路由器时递减1；当TTL 递减到0时，信息包被路由器抛弃。
+
 ### 路由器知识点补充：
 
 1. 路由器都有独立且不重复的MAC地址。
@@ -56,4 +66,6 @@ ping可以说是ICMP协议的最著名的应用，是TCP/IP协议的一部分。
 [https://zhidao.baidu.com/question/409920562.html](https://zhidao.baidu.com/question/409920562.html)
 
 [https://www.zhihu.com/question/21787311?from=profile\_question\_card](https://www.zhihu.com/question/21787311?from=profile_question_card)
+
+[https://blog.csdn.net/u010240427/article/details/52585841](https://blog.csdn.net/u010240427/article/details/52585841)
 
