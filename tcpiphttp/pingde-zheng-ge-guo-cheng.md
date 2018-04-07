@@ -35,5 +35,25 @@ ping可以说是ICMP协议的最著名的应用，是TCP/IP协议的一部分。
 2. 路由器端口1得到数据帧之后，将数据帧发送到端口2，端口2需要将数据帧发给主机C，那么端口2需要知道主机C的MAC地址，跟上面一样，使用ARP协议，从ARP缓存中查找，找不到就广播。
 3. 后续步骤跟同网段内ping的步骤类似。。。
 
+### 路由器知识点补充：
 
+1. 路由器都有独立且不重复的MAC地址。
+2. 商用路由器每个端口都有MAC地址。家用路由器不同与商用，家用只有两个，一个用于WAN口，一个用LAN口。下图所示的就是家用路由器WAN口和LAN口的MAC地址。
+3. 路由器是一个硬件，网关是一个概念，只要连接两个不同网络的设备都可以叫网关，网关可以设置在路由器上，一般一个局域网会设置一个网关，供一个网段使用。
+
+![](/assets/0005.png)
+
+![](/assets/0006.png)
+
+以上内容参考自：
+
+[https://baike.baidu.com/item/PING/6235\#11](https://baike.baidu.com/item/PING/6235#11)
+
+[https://zhidao.baidu.com/question/1796579256282821107.html](https://zhidao.baidu.com/question/1796579256282821107.html)
+
+[http://blog.51cto.com/wanicy/335207](http://blog.51cto.com/wanicy/335207)
+
+[https://zhidao.baidu.com/question/409920562.html](https://zhidao.baidu.com/question/409920562.html)
+
+[https://www.zhihu.com/question/21787311?from=profile\_question\_card](https://www.zhihu.com/question/21787311?from=profile_question_card)
 
