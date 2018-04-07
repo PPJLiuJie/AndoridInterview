@@ -49,7 +49,8 @@
   * [HTTP如何处理长连接](tcpiphttp/httpru-he-chu-li-chang-lian-jie.md)
   * [Cookie和Session的作用及原理](tcpiphttp/cookiehe-session-de-zuo-yong-ji-yuan-li.md)
   * [电脑上访问一个网页，整个过程是怎样的？](tcpiphttp/dian-nao-shang-fang-wen-yi-ge-wang-ye-ff0c-zheng-ge-guo-cheng-shi-zen-yang-de-ff1f.md)
-  * [Ping的整个过程](tcpiphttp/pingde-zheng-ge-guo-cheng.md)
+  * [ping](tcpiphttp/pingde-zheng-ge-guo-cheng.md)
+  * [Traceroute](tcpiphttp/traceroute.md)
   * [IP地址分类](tcpiphttp/ipdi-zhi-fen-lei.md)
   * [路由器与交换机的区别](tcpiphttp/lu-you-qi-yu-jiao-huan-ji-de-qu-bie.md)
 
