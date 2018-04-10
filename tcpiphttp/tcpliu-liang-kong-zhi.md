@@ -12,3 +12,10 @@
 
 TCP为每一个连接设置了一个持续计时器。当TCP连接的发送方收到接收方的零窗口通知时，发送方就启动持续计时器。若持续计时器设置的时间到期，发送方就发送一个零窗口控测报文段（携带1字节数据）给接收方。如果接收方可以接受数据，就重新开始发送数据；如果接收方不能接受数据，就重新设置持续计时器。
 
+以上内容摘自：  
+[https://github.com/hadyang/interview/blob/master/basic/net/tcp.md](https://github.com/hadyang/interview/blob/master/basic/net/tcp.md)
+
+《TCP/IP协议族》第四版
+
+
+
