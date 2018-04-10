@@ -4,3 +4,7 @@ Traceroute的原理非常非常有意思。它收到到目的主机的IP后，�
 
 ![](/assets/0010.png)
 
+#### 以上内容摘自：
+
+[https://github.com/LRH1993/android\_interview/blob/master/computer-networks/tcpip.md](https://github.com/LRH1993/android_interview/blob/master/computer-networks/tcpip.md)
+
