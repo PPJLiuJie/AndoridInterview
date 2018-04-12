@@ -73,3 +73,9 @@ TCP协议是一种面向连接的、可靠的、基于字节流的运输层通�
 
 第二点：如果主机1直接CLOSED，然后又再向主机2发起一个新连接，我们不能保证这个新连接与刚关闭的连接的端口号是不同的。也就是说有可能新连接和老连接的端口号是相同的。一般来说不会发生什么问题，但是还是有特殊情况出现：假设新连接和已经关闭的老连接端口号是一样的，**如果前一次连接的某些数据仍然滞留在网络中**（称为Lost Duplicate），这些延迟数据在建立新连接之后才到达主机2，由于新连接和老连接的端口号是一样的，TCP协议就认为那个延迟的数据是属于新连接的，这样就和真正的新连接的数据包发生混淆了。所以TCP连接要在TIME\_WAIT状态等待2倍MSL，保证本次连接的所有数据都从网络中消失。
 
+#### 以上内容摘自：
+
+[https://github.com/LRH1993/android\_interview/blob/master/computer-networks/tcpip.md](https://github.com/LRH1993/android_interview/blob/master/computer-networks/tcpip.md)
+
+《TCP/IP协议族》第四版
+
