@@ -8,9 +8,9 @@ TCP是面向连接的，无论哪一方向另一方发送数据之前，都必�
 
 #### 名词解释：
 
-SYN：synchronous 同步序号
+SYN：synchronous SYN是6个控制位中的一个，置位1时表示当前报文段的作用是同步序号。
 
-Seq：Sequence Number 序列号
+seq：Sequence Number 序号
 
 ACK：Acknowledgement 确认字符
 
