@@ -35,6 +35,7 @@
   * [异步消息机制\(Handler、Looper、MessageQueue\)](android/yi-bu-xiao-xi-ji-523628-handler-looper-messagequeue.md)
   * [Fragment生命周期方法、设备旋转的影响](android/fragmentsheng-ming-zhou-qi-fang-fa-3001-she-bei-xuan-zhuan-de-ying-xiang.md)
   * [自定义权限](android/zi-ding-yi-quan-xian.md)
+  * [Android5.0~8.0新特性](android/android50~80xin-te-xing.md)
 * [TCP/IP、HTTP](tcpiphttp.md)
   * [OSI模型、TCP/IP模型各层的结构与功能，都有哪些协议](tcpiphttp/tcpipmo-xing-ge-ceng-de-jie-gou-yu-gong-neng-ff0c-du-you-na-xie-xie-yi.md)
   * [TCP报文结构](tcpiphttp/tcpbao-wen-jie-gou.md)
