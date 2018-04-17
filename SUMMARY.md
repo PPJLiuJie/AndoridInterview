@@ -28,6 +28,7 @@
   * [内存分配与回收策略](javaxu-ni-ji/nei-cun-fen-pei-yu-hui-shou-ce-lve.md)
   * [虚拟机类加载机制](javaxu-ni-ji/xu-ni-ji-lei-jia-zai-ji-zhi.md)
   * [类加载器](javaxu-ni-ji/lei-jia-zai-qi.md)
+  * [从String a = new String\("abc"\)分析对象的内存分配](javaxu-ni-ji/cong-string-a-new-string-abc-fen-xi-dui-xiang-de-nei-cun-fen-pei.md)
 * [Android](android.md)
   * [onSaveInstanceState的使用](android/onsaveinstancestatede-shi-yong.md)
   * [activity的启动模式](android/activityde-qi-dong-mo-shi.md)
